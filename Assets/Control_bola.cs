@@ -20,7 +20,7 @@ public class Control_bola : MonoBehaviour {
 
     // Update is called once per frame
     void OnCollision2D(Collision2D colInfo) {
-            if(colInfo.collider.tag == "Jugador")
+        if(colInfo.collider.tag == "Jugador")
         {
             var velocity_y = GetComponent<Rigidbody2D>().velocity.y/2 + colInfo.collider.GetComponent<Rigidbody2D>().velocity.y/3;
         }
