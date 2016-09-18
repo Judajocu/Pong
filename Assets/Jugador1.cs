@@ -34,6 +34,7 @@ public class Jugador1 : MonoBehaviour {
             GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 0);
             
         }
-        
+
+        GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
     }
 }
