@@ -20,10 +20,10 @@ public class Manejador_juego : MonoBehaviour {
             puntos_jugador_2 += 1;
         }
     }
-    void display ()
+    void OnGUI ()
     {
         GUI.skin = show;
-        GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height * 2 + 30, 100, 100), "" + puntos_jugador_1);
-        GUI.Label(new Rect(Screen.width / 2 + 150, Screen.height * 2 + 30, 100, 100), "" + puntos_jugador_2);
+        GUI.Label(new Rect(Screen.width / 2 - 150,  30, 100, 100), "" + puntos_jugador_1);
+        GUI.Label(new Rect(Screen.width / 2 + 150,  30, 100, 100), "" + puntos_jugador_2);
     }
 }

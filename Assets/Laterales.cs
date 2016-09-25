@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Laterales : MonoBehaviour {
 
-	void Trigger2D (Collider2D hitInfo) {
+	void OnTriggerEnter2D (Collider2D hitInfo) {
 
         if(hitInfo.name == "bola")
         {

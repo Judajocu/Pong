@@ -147,7 +147,7 @@ GameObject:
   - 50: {fileID: 589322686}
   m_Layer: 0
   m_Name: jugador2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -160,7 +160,7 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 589322685}
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 99999
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -294,6 +294,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 734549266}
   - 114: {fileID: 734549265}
+  - 114: {fileID: 734549267}
   m_Layer: 0
   m_Name: Play
   m_TagString: Untagged
@@ -336,6 +337,18 @@ Transform:
   - {fileID: 931420504}
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!114 &734549267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 734549264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abe65be8840ebb94ba73a55d06b88263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  show: {fileID: 11400000, guid: fdfc05bdee1499549801714643dda786, type: 2}
 --- !u!1 &737141514
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,7 +363,7 @@ GameObject:
   - 50: {fileID: 737141517}
   m_Layer: 0
   m_Name: jugador1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -409,7 +422,7 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 737141514}
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 99999
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -454,6 +467,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 931420504}
   - 61: {fileID: 931420503}
+  - 114: {fileID: 931420505}
   m_Layer: 0
   m_Name: tope_izquierda
   m_TagString: Untagged
@@ -470,7 +484,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
@@ -488,6 +502,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 734549266}
   m_RootOrder: 3
+--- !u!114 &931420505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 931420502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b9cb6514effa348bdafbadbca53130, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1426298495
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,7 +573,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 4.793831
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -682,6 +707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b6fa79dc9d4c7844bb35de2130fc26a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
 --- !u!1 &1727306757
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,6 +717,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1727306759}
   - 61: {fileID: 1727306758}
+  - 114: {fileID: 1727306760}
   m_Layer: 0
   m_Name: tope_derecha
   m_TagString: Untagged
@@ -707,7 +734,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
@@ -725,6 +752,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 734549266}
   m_RootOrder: 2
+--- !u!114 &1727306760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1727306757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b9cb6514effa348bdafbadbca53130, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1822630148
 GameObject:
   m_ObjectHideFlags: 0
