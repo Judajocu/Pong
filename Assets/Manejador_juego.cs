@@ -11,14 +11,12 @@ public class Manejador_juego : MonoBehaviour {
 
 	public static void Score (string pared)
     {
-        if(pared.Equals("tope_derecho"))
+        if(pared.Equals("tope_derecha"))
         {
             puntos_jugador_1 += 1;
-            Debug.Log("entro para 1");
         }
         else
         {
-            Debug.Log("entro para 2");
             puntos_jugador_2 += 1;
         }
     }
