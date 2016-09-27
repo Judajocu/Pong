@@ -21,8 +21,26 @@ public class Control_bola : MonoBehaviour
         if(colInfo.collider.tag == "Jugador")
         {
             velocity_y = GetComponent<Rigidbody2D>().velocity.y/2 + colInfo.collider.GetComponent<Rigidbody2D>().velocity.y/3;
+            //GetComponent<AudioSource>().Play();
         }
 	}
+
+    void Update ()
+    {
+        float xVelocity = GetComponent<Rigidbody2D>().velocity.x;
+        if(xVelocity < 18 && xVelocity > -18 && xVelocity !=0)
+        {
+            rb = GetComponent<Rigidbody2D>();
+            if (xVelocity > 0)
+            {
+                rb.velocity = new Vector3(20, GetComponent<Rigidbody2D>().velocity.y);
+            }
+            else
+            {
+                rb.velocity = new Vector3(-20, GetComponent<Rigidbody2D>().velocity.y);
+            }
+        }
+    }
 
     void ResetBall()
     {
