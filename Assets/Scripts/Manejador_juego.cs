@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Manejador_juego : MonoBehaviour {
+public class Manejador_juego : MonoBehaviour
+{
 
 	static int puntos_jugador_1 = 0;
     
@@ -29,6 +30,7 @@ public class Manejador_juego : MonoBehaviour {
             puntos_jugador_2 += 1;
         }
     }
+
     void OnGUI ()
     {
         GUI.skin = show;

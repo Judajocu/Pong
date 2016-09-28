@@ -6,7 +6,7 @@ public class Control_bola : MonoBehaviour
 
     // Use this for initialization
     public Rigidbody2D rb;
-    float ballspeed = 100;
+    float ballspeed = 50;
     public float velocity_y;
     public float velocity_x;
 
