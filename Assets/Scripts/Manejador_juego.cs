@@ -26,6 +26,7 @@ public class Manejador_juego : MonoBehaviour
             Reinicio = true;
             puntos_jugador_1 = 0;
             puntos_jugador_2 = 0;
+
         }
         Reinicio = false;
     }
