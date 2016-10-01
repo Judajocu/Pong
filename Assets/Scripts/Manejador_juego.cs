@@ -12,11 +12,22 @@ public class Manejador_juego : MonoBehaviour
 
     public Transform LaBola;
 
+    public bool Reinicio = false;
+
     public void Start()
     {
         LaBola = GameObject.FindGameObjectWithTag("bola").transform;
+    }
 
-
+    public void Update()
+    {
+        if(!Reinicio && Input.GetButtonDown("Jump"))
+        {
+            Reinicio = true;
+            puntos_jugador_1 = 0;
+            puntos_jugador_2 = 0;
+        }
+        Reinicio = false;
     }
 
 	public static void Score (string pared)
@@ -37,12 +48,12 @@ public class Manejador_juego : MonoBehaviour
         GUI.Label(new Rect(Screen.width / 2 - 100 - 9,  30, 100, 100), "" + puntos_jugador_1);
         GUI.Label(new Rect(Screen.width / 2 + 100 - 9,  30, 100, 100), "" + puntos_jugador_2);
 
-        if (GUI.Button(new Rect(Screen.width / 2 - 110 / 2, 23, 110, 53), "REINICIO"))
+        /*if (GUI.Button(new Rect(Screen.width / 2 - 110 / 2, 23, 110, 53), "REINICIO"))
         {
             puntos_jugador_1 = 0;
             puntos_jugador_2 = 0;
 
             LaBola.gameObject.SendMessage("REINICIO bola");
-        }
+        }*/
     }
 }

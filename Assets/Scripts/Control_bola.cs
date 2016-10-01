@@ -5,10 +5,11 @@ public class Control_bola : MonoBehaviour
 {
 
     // Use this for initialization
-    public Rigidbody2D rb;
-    float ballspeed = 50;
-    public float velocity_y;
-    public float velocity_x;
+    public Rigidbody2D RB;
+    float BallSpeed = 50;
+    public float Velocity_y;
+    public float Velocity_x;
+    public bool Jugando = false;
 
     void Start ()
     {
@@ -20,7 +21,7 @@ public class Control_bola : MonoBehaviour
     {
         if(colInfo.collider.tag == "Jugador")
         {
-            velocity_y = GetComponent<Rigidbody2D>().velocity.y/2 + colInfo.collider.GetComponent<Rigidbody2D>().velocity.y/3;
+            Velocity_y = GetComponent<Rigidbody2D>().velocity.y/2 + colInfo.collider.GetComponent<Rigidbody2D>().velocity.y/3;
             //GetComponent<AudioSource>().Play();
         }
 	}
@@ -30,41 +31,50 @@ public class Control_bola : MonoBehaviour
         float xVelocity = GetComponent<Rigidbody2D>().velocity.x;
         if(xVelocity < 18 && xVelocity > -18 && xVelocity !=0)
         {
-            rb = GetComponent<Rigidbody2D>();
+            RB = GetComponent<Rigidbody2D>();
             if (xVelocity > 0)
             {
-                rb.velocity = new Vector3(20, GetComponent<Rigidbody2D>().velocity.y);
+                RB.velocity = new Vector3(20, GetComponent<Rigidbody2D>().velocity.y);
             }
             else
             {
-                rb.velocity = new Vector3(-20, GetComponent<Rigidbody2D>().velocity.y);
+                RB.velocity = new Vector3(-20, GetComponent<Rigidbody2D>().velocity.y);
             }
         }
     }
 
     void ResetBall()
     {
-        rb = GetComponent<Rigidbody2D>();
+        RB = GetComponent<Rigidbody2D>();
 
-        rb.velocity = new Vector3(0, 0);
+        RB.velocity = new Vector3(0, 0);
         gameObject.transform.Translate(0, 0, 0);
         gameObject.transform.position = new Vector3(0,0,0);
-
-        Invoke("GoBall", 1.0f);
-
+        
+        Invoke("GoBall", 2.0f);
     }
 
     void GoBall()
     {
-        rb = GetComponent<Rigidbody2D>();
-        var randpos = Random.Range(0, 2);
-        if (randpos <= 0.5)
+        RB = GetComponent<Rigidbody2D>();
+        var randposx = Random.Range(0, 2);
+        var randposy = Random.Range(0, 2);
+
+        if (randposx <= 0.5)
         {
-            rb.AddForce(new Vector2(ballspeed, 10));
+            if(randposy <= 0.5)
+                RB.AddForce(new Vector2(BallSpeed, 10));
+            else
+                RB.AddForce(new Vector2(BallSpeed, -10));
         }
+
         else
         {
-            rb.AddForce(new Vector2(-1 * ballspeed, -10));
+            if (randposy <= 0.5)
+                RB.AddForce(new Vector2(-1 * BallSpeed, 10));
+            else
+                RB.AddForce(new Vector2(-1 * BallSpeed, -10));
         }
+
     }
 }
