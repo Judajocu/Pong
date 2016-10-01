@@ -10,11 +10,7 @@ public class Jugador1 : MonoBehaviour {
     public KeyCode arriba;
     public KeyCode abajo;
     
-   // void Start () {
-     //   GetComponent<Rigidbody2D>().freezeRotation = true;
-       // GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-    //}
-	// Update is called once per frame
+
 	void Update () {
         
 
