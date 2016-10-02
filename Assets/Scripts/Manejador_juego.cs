@@ -11,6 +11,7 @@ public class Manejador_juego : MonoBehaviour
 
     public GUISkin show;
     public GameObject Bola;
+    private Control_bola Nueva_Bola = new Control_bola();
     public TextMesh TextoGanador;
     public GameObject Texto;
 
@@ -30,19 +31,22 @@ public class Manejador_juego : MonoBehaviour
             Reinicio = true;
             puntos_jugador_1 = 0;
             puntos_jugador_2 = 0;
+            Texto.SetActive(false);
+            Bola.SetActive(true);
+
 
         }
         Reinicio = false;
         if (puntos_jugador_1 == 5)
         {
-            
-            Destroy(Bola);
+
+            Bola.SetActive(false);
             Texto.SetActive(true);
             TextoGanador.text = "¡Enhorabuena!" +" \n" +"Felicidades Jugador 1 has ganado";
         }
         else if (puntos_jugador_2 == 5)
         {
-            Destroy(Bola);
+            Bola.SetActive(false);
             Texto.SetActive(true);
             TextoGanador.text = "¡Enhorabuena!" + " \n" + "Felicidades Jugador 2 has ganado";
         }

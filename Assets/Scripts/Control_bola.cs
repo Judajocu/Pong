@@ -43,7 +43,7 @@ public class Control_bola : MonoBehaviour
         }
     }
 
-    void ResetBall()
+    public void ResetBall()
     {
         RB = GetComponent<Rigidbody2D>();
 
@@ -54,7 +54,7 @@ public class Control_bola : MonoBehaviour
         Invoke("GoBall", 2.0f);
     }
 
-    void GoBall()
+     void GoBall()
     {
         RB = GetComponent<Rigidbody2D>();
         var randposx = Random.Range(0, 2);
